@@ -30,7 +30,7 @@ for k,v in items:
     print(k,':',v)
 
 plot_title = 'count of '+args.key+' by language'
-png_title = args.input_path+'.png'
+png_title = args.input_path+args.key+'.png'
 
 top_10 = sorted(items[:10], key=lambda x: x[1])
 keys, values = zip(*top_10)
