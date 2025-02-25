@@ -26,9 +26,16 @@ if args.percent:
 # print the count values
 items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=True)
 
-plot_title = args.input_path+'.png'
-top_10 = items[:10]
-keys, values = zip(*top_10)
+for k,v in items:
+    print(k,':',v)
 
+plot_title = 'count of '+args.key+' by language'
+png_title = args.input_path+'.png'
+
+top_10 = sorted(items[:10], key=lambda x: x[1])
+keys, values = zip(*top_10)
+plt.xlabel("language")
+plt.ylabel("Count")
+plt.title(plot_title)
 plt.bar(keys, values)
-plt.savefig(plot_title, bbox_inches="tight")
+plt.savefig(png_title, bbox_inches="tight")
