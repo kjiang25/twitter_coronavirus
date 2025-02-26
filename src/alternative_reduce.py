@@ -28,6 +28,11 @@ for path in args.input_paths:
         date += pd.Timedelta(days=1)
 
 dates = pd.to_datetime(sorted(total.keys()))
+
+for hashtag in args.keys:
+    counts = [total[date.strftime('%Y-%m-%d')].get(hashtag, 0) for date in dates]
+    print(f"Counts for {hashtag}: {counts}")
+
 for hashtag in args.keys:
     counts = [total[date.strftime('%Y-%m-%d')].get(hashtag, 0) for date in dates]
     plt.plot(dates, counts, marker='o', linestyle='-', label=hashtag)
