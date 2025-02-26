@@ -60,14 +60,17 @@ with zipfile.ZipFile(args.input_path) as archive:
                     
                 # search hashtags
                 for hashtag in hashtags:
+                    country = None
                     lang = tweet['lang']
                     if tweet.get('place') and tweet['place'].get('country_code'):
                         country = tweet['place']['country_code']
                     if hashtag in text:
                         counter_lang[hashtag][lang] += 1
-                        counter_country[hashtag][country] += 1
+                        if country:
+                            counter_country[hashtag][country] += 1
                     counter_lang['_all'][lang] += 1
-                    counter_country['_all'][country] += 1
+                    if country:
+                        counter_country['_all'][country] += 1
 
 # open the outputfile
 try:
