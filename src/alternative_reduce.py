@@ -35,12 +35,12 @@ for hashtag in args.keys:
 
 for hashtag in args.keys:
     counts = [total[date.strftime('%Y-%m-%d')].get(hashtag, 0) for date in dates]
-    plt.plot(dates, counts, marker='o', linestyle='-', label=hashtag)
+    plt.plot(dates, counts, linestyle='-', label=hashtag)
 
 plt.xlabel('Date')
 plt.ylabel('Count')
 plt.title("Hashtag Trends Over Time")
-plt.legend()
+plt.legend(prop={'size': 10}, loc='upper right', handlelength=2)
 plt.xticks(rotation=45)
 plt.grid(True)
 plt.tight_layout()
