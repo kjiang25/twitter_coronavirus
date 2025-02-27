@@ -15,14 +15,8 @@ from collections import Counter,defaultdict
 import matplotlib.pyplot as plt
 import matplotlib
 
-# Set font that supports CJK characters
-matplotlib.rcParams['font.family'] = 'DejaVu Sans'
-
-# Use non-interactive backend that supports Unicode
-matplotlib.use('Agg')
-
 # open the input path
-with open(args.input_path) as f:
+with open(args.input_path, encoding='utf-8') as f:
     counts = json.load(f)
 
 # normalize the counts by the total values
@@ -36,7 +30,7 @@ items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), rev
 for k,v in items:
     print(k,':',v)
 
-plot_title = 'count of '+args.key+' by language'
+plot_title = 'count of hashtag by language'
 png_title = args.input_path+args.key+'.png'
 
 top_10 = sorted(items[:10], key=lambda x: x[1])
