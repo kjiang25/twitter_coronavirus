@@ -19,10 +19,10 @@ This project analyzes the spread of coronavirus-related discussions on Twitter i
 - `map.py`: Extracts hashtags and counts occurrences per language and country
 - Outputs separate `.lang` and `.country files`
 
-### 1. Reducing Data
+### 2. Reducing Data
 - `reduce.py`: Aggregates mapped counts to get final totals
 
-### 1. Visualization
+### 3. Visualization
 - `visualize.py`:  Generates bar graphs of the most common hashtags by language and country
 - `alternative_reduce.py`: Produces a line graph showing hashtag trends over time
 
@@ -33,7 +33,7 @@ The following visualizations illustrate the most common hashtags by country and 
 ![Count of #coronavirus by language](img/langreducefull#coronavirus.png)
 ![Count of #코로나바이러스 by language](img/langreducefull#코로나바이러스.png)
 ![Count of #coronavirus by country](img/countryreducefull#coronavirus.png)
-![Count of #코로나바이러스 by country](img/countryreducefull#코로나바이러스.png)
+![Count of #코로나바이러스 by country](img/countryreducefull#coronavirus.png)
 ![Hashtag Trends over 2020](img/alternative-reduce.png)
 
 ## Running the Analysis
@@ -44,18 +44,18 @@ git clone
 cd coronavirus-twitter-analysis
 ```
 
-1. Run the Mapper
+2. Run the Mapper
 ```
 nohup sh run_maps.sh &
 ```
 
-1. Run the Reducer
+3. Run the Reducer
 ```
 python3 src/reduce.py --input_paths outputs/geoTwitter20-*-*.zip.lang --output_path reduced_data/langreducefull
 python3 src/reduce.py --input_paths outputs/geoTwitter20-*-*.zip.country --output_path reduced_data/countryreducefull
 ```
 
-1. Generate Visualizations
+4. Generate Visualizations
 ```
 src/visualize.py --input_path=reduced_data/langreducefull --key=#coronavirus
 src/visualize.py --input_path=reduced_data/countryreducefull --key=#coronavirus
