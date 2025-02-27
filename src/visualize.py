@@ -13,6 +13,13 @@ import os
 import json
 from collections import Counter,defaultdict
 import matplotlib.pyplot as plt
+import matplotlib
+
+# Set font that supports CJK characters
+matplotlib.rcParams['font.family'] = 'DejaVu Sans'
+
+# Use non-interactive backend that supports Unicode
+matplotlib.use('Agg')
 
 # open the input path
 with open(args.input_path) as f:
@@ -38,4 +45,5 @@ plt.xlabel("language")
 plt.ylabel("Count")
 plt.title(plot_title)
 plt.bar(keys, values)
+plt.tight_layout()
 plt.savefig(png_title, bbox_inches="tight")
