@@ -30,12 +30,12 @@ items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), rev
 for k,v in items:
     print(k,':',v)
 
-plot_title = 'count of hashtag by language'
+plot_title = 'count of hashtag by country'
 png_title = args.input_path+args.key+'.png'
 
 top_10 = sorted(items[:10], key=lambda x: x[1])
 keys, values = zip(*top_10)
-plt.xlabel("language")
+plt.xlabel("country")
 plt.ylabel("Count")
 plt.title(plot_title)
 plt.bar(keys, values)
