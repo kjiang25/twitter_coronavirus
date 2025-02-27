@@ -30,10 +30,10 @@ This project analyzes the spread of coronavirus-related discussions on Twitter i
 
 The following visualizations illustrate the most common hashtags by country and language, as well as the usage trends over time:
 
-![Count of #coronavirus by language](img/langreducefull#coronavirus.png)
-![Count of #코로나바이러스 by language](img/langreducefull#코로나바이러스.png)
-![Count of #coronavirus by country](img/countryreducefull#coronavirus.png)
-![Count of #코로나바이러스 by country](img/countryreducefull#coronavirus.png)
+![Count of #coronavirus by language](img/langreducefull_coronavirus.png)
+![Count of #코로나바이러스 by language](img/langreducefull_코로나바이러스.png)
+![Count of #coronavirus by country](img/countryreducefull_coronavirus.png)
+![Count of #코로나바이러스 by country](img/countryreducefull_coronavirus.png)
 ![Hashtag Trends over 2020](img/alternative-reduce.png)
 
 ## Running the Analysis
