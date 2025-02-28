@@ -44,7 +44,7 @@ The following visualizations illustrate the most common hashtags by country and 
 
 **Count of #코로나바이러스 by country**
 
-![Count of #코로나바이러스 by country](img/countryreducefull_coronavirus.png)
+![Count of #코로나바이러스 by country](img/countryreducefull_코로나바이러스.png)
 
 **Hashtag Trends over 2020**
 
